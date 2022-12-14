@@ -20,7 +20,7 @@ def write_to_file(data, num1, num2, file):
 def shell_sort_first(array):
     n = len(array)
     s = int(math.log2(n))
-    gap = 1
+    gap = 2 ** (s + 1) - 1
     c = 0
     while gap > 0:
         for i in range(gap, n):
@@ -38,8 +38,8 @@ def shell_sort_first(array):
 
 def shell_sort_second(array):
     n = len(array)
-    s = int(math.log2(n))
-    gap = 1
+    s = int(math.log(2 * n + 1, 3) - 1)
+    gap = (3 ** (s + 1) - 1) // 2
     c = 0
     while gap > 0:
         for i in range(gap, n):

@@ -26,10 +26,11 @@ def shell_sort_first(array):
         for i in range(gap, n):
             cur_elem = array[i]
             j = i
+            c += 1
             while j >= gap and array[j - gap] > cur_elem:
-                c += 1
                 array[j] = array[j - gap]
                 j -= gap
+                c += 1
             array[j] = cur_elem
         s -= 1
         gap = 2 ** (s + 1) - 1
@@ -45,10 +46,11 @@ def shell_sort_second(array):
         for i in range(gap, n):
             cur_elem = array[i]
             j = i
+            c += 1
             while j >= gap and array[j - gap] > cur_elem:
-                c += 1
                 array[j] = array[j - gap]
                 j -= gap
+                c += 1
             array[j] = cur_elem
         s -= 1
         gap = (3 ** (s + 1) - 1) // 2
